@@ -1,0 +1,30 @@
+# ---- Course data pack: never commit ----
+# campus_customs.db holds user accounts (hashed passwords) and the product images are
+# not ours to redistribute. Both are supplied separately and unpacked locally.
+data/
+data.zip
+
+# ---- Secrets ----
+.env
+*.env
+!.env.example
+backend/.session_secret
+
+# ---- A browsable dump of the database ----
+# Generated locally for inspection. It embeds real email addresses and saved chat
+# messages from the users table, so it must not be published.
+output/db_browser.html
+
+# ---- Python ----
+backend/.venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# ---- Node ----
+node_modules/
+frontend/dist/
+*.log
+
+# ---- macOS ----
+.DS_Store

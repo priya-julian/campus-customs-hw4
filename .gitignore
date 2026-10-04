@@ -1,0 +1,9 @@
+# This repository contains the hw4/ project folder. Everything below is local-only.
+
+# Claude Code session config — contains machine-specific absolute paths
+.claude/
+
+# Workspace artifact from the folder-joke skill, not part of the submission
+joke.md
+
+.DS_Store
