@@ -315,4 +315,29 @@ answers in character with a 200.
 
 ---
 
+## Problem 13 — Push to GitHub and submit the URL
+
+**Prompt:**
+
+> Problem 13: Push to GitHub and submit the URL. Put your code in a folder named hw4 and push
+> it to a public GitHub repo. Do not put your real .env, campus_customs.db, or product images
+> in the GitHub repo. Use .gitignore. Include .env.example with placeholders only. The first
+> image shows the expected file layout. The second image shows the local-only data pack (not
+> in git). Remember, the agent itself is four files under backend/: prompts/prompt.md,
+> agent.py, tools.py, and models.py. README.md should explain how to run the front end and
+> back end after placing the data pack.
+
+**Follow-up prompt:**
+
+> done
+
+**What was lacking in the first prompt:** nothing about the task — the two screenshots pinned
+the layout down precisely. The follow-up was me confirming I had created the empty GitHub
+repo, which Claude could not do itself: the `gh` CLI is not installed on this machine, so it
+could prepare and commit everything but needed the repo to exist before it could push.
+
+**Result:** https://github.com/priya-julian/campus-customs-hw4
+
+---
+
 <!-- Append a new "## Problem N — Title" section here as each problem is tackled. -->
