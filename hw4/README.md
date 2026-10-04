@@ -57,26 +57,34 @@ is needed.
 The agent calls OpenAI through Portkey. Copy the example file and fill in your own key:
 
 ```bash
-cp .env.example ../.env
+cp .env.example .env
 ```
 
-`PORTKEY_API_KEY` is read from the environment at run time and is never committed. The
-backend also looks for `.env` in `hw4/`, in `hw4/backend/`, and in the parent folder, so any
-of those locations works.
+Open `.env` and replace the placeholder with your real key. `PORTKEY_API_KEY` is read from
+the environment at run time and is never committed — `.env` is gitignored, `.env.example` is
+not. The backend walks up from `backend/` looking for a `.env`, so `hw4/.env`,
+`hw4/backend/.env`, or one in a project folder above all work.
 
 ## 3. Run the back end
 
-From the `backend/` folder:
+All four commands run from `hw4/backend/`. Create the virtual environment and install into
+it:
 
 ```bash
-python3 -m venv .venv && ./.venv/bin/pip install -r ../requirements.txt
+cd backend
 ```
 
 ```bash
-cd backend && uvicorn main:app --reload --port 8000
+python3 -m venv .venv && source .venv/bin/activate && pip install -r ../requirements.txt
 ```
 
-Check it came up:
+Then start the server:
+
+```bash
+uvicorn main:app --reload --port 8000
+```
+
+Check it came up, in another terminal:
 
 ```bash
 curl localhost:8000/api/health
@@ -86,7 +94,7 @@ That should report `{"status":"ok","products":102}`.
 
 ## 4. Run the front end
 
-In a second terminal, from `hw4/`:
+In a second terminal, from `hw4/` (not `hw4/backend/`):
 
 ```bash
 npm --prefix frontend install && npm --prefix frontend run dev
